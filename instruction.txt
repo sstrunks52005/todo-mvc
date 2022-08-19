@@ -1,0 +1,43 @@
+const todos = require("./controllers/todos")
+
+When client refreshes, get request to find the correct router, directed to home controller, 
+and render out some ejs. Router knows which controller to hand off request to.
+
+Root route '/' homeRoutes -> GET request /routes/home.js -> homeController using getIndex method 
+-> /controllers/home.js getIndex renders out index.ejs 
+
+When click button to start todo list -> /todos -> todoRoutes
+Routes/todos.js -> since you're already in the todos route, don't have to type out todos/etc over and over
+Hear GET request on root route of todos, use todosController -> getTodos
+Go to controllers/todos.js -> Todo is a MODEL SCHEMA. Use model to talk to db and pull data -> show render
+Todo variable in todo.js tied to models/Todo.js
+
+add entry to todo list: /routes/todo -> router.post createTodo method, controller/todos.js
+
+Each Li for each todo item will have unique data-id for each document in your collection.
+How did the data-id show up in the DOM? todo.ejs??
+controller/todos.js -> getTodos -> render ejs
+
+client side smurf hears the click when clicking the todo item, -> located js/main.js queryslector
+
+how to go from span up a level to Li - USE parentNode
+
+When click on striked out first try, use markIncomplete function. Put request has slightly different route from markComplete.
+    router/todos -> put request todoController.markIncomplete. Controllers/todos.s -> markIncomplete function -> false
+
+How to make this application faster/different?
+
+
+
+WHAT IS MONGOOSE? Add in mvc lecture - help talk to db
+Add schemas - the structure of what use in mongodb database. template for db
+what is mvc, how is it helpful. 
+
+
+npm install
+mongo string in env file - ip address accessible
+npm start
+
+what do you think about node.js? Other up and coming applications have .env built in
+
+Procfile is for heroku deployment

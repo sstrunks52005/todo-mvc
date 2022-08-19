@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+// model schema - even without access to db, we can see whats going in to db
 const TodoSchema = new mongoose.Schema({
   todo: {
     type: String,

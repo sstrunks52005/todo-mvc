@@ -10,8 +10,12 @@
 <body>
     <h1>Todos</h1>
     <ul>
+        <!-- for each looop: all the todos in the document are passed in. data-zebra (attribute) can be called anything. This one grabs ID out of document-->
+        <!-- el = element = first try, second try, etc. Every time loop runs, it will hold object from collection. Since its obj, we can grab property from obj ex)_id -->
+        <!-- <% stop writing html and start writing js   %> turns js off and html back on. <% = %> to plug in variables-->
     <% todos.forEach( el => { %>
         <li class='todoItem' data-id='<%=el._id%>'>
+            <!-- check css to see what the classes do-->
             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
             <span class='del'> Delete </span>
         </li>
